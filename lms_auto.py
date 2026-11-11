@@ -52,8 +52,8 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
 SHOTS = BASE / "screenshots"
 SHOTS.mkdir(exist_ok=True)
 
-EARLY_START_MIN = 1   # за сколько минут до начала заходить
-RETRY_SEC = 30        # как часто проверять расписание
+EARLY_START_MIN = 5   # за сколько минут до начала заходить
+RETRY_SEC = 600         # как часто проверять расписание
 
 
 def local(value: str) -> dt.datetime:
