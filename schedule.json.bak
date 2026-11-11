@@ -1,0 +1,10 @@
+{
+  "lessons": [
+    { "name": "Ekonometrika",        "weekdays": [0], "time": "11:00", "duration_min": 80 },
+    { "name": "Moliya asoslari",     "weekdays": [1], "time": "13:00", "duration_min": 80 },
+    { "name": "Statistika",          "weekdays": [2], "time": "09:30", "duration_min": 80 },
+    { "name": "Marketing",           "weekdays": [2], "time": "16:00", "duration_min": 80 },
+    { "name": "Raqamli iqtisodiyot", "weekdays": [3], "time": "16:00", "duration_min": 80 },
+    { "name": "Mikroiqtisodiyot",    "weekdays": [4], "time": "16:00", "duration_min": 80 }
+  ]
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>uz.tsue.lmsauto</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/env</string>
+    <string>python3</string>
+    <string>__APP_DIR__/lms_auto.py</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__APP_DIR__</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HEADLESS</key>
+    <string>1</string>
+    <key>TZ</key>
+    <string>Asia/Tashkent</string>
+    <key>PYTHONUNBUFFERED</key>
+    <string>1</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>30</integer>
+
+  <key>StandardOutPath</key>
+  <string>__APP_DIR__/lms.log</string>
+  <key>StandardErrorPath</key>
+  <string>__APP_DIR__/lms.log</string>
+</dict>
+</plist>

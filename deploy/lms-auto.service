@@ -1,0 +1,22 @@
+[Unit]
+Description=LMS TSUE auto-attend (lms_auto.py)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__APP_DIR__
+Environment=TZ=Asia/Tashkent
+Environment=HEADLESS=1
+Environment=PYTHONUNBUFFERED=1
+# Если Chromium не стартует в контейнере/под root:
+# Environment=CHROMIUM_ARGS=--no-sandbox
+ExecStart=__APP_DIR__/.venv/bin/python __APP_DIR__/lms_auto.py
+Restart=always
+RestartSec=30
+StandardOutput=append:__APP_DIR__/lms.log
+StandardError=append:__APP_DIR__/lms.log
+
+[Install]
+WantedBy=multi-user.target

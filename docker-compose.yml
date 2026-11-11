@@ -1,0 +1,21 @@
+services:
+  lms-auto:
+    build: .
+    image: lms-auto:latest
+    container_name: lms-auto
+    restart: unless-stopped
+    init: true
+    env_file:
+      - .env
+    environment:
+      TZ: Asia/Tashkent
+      HEADLESS: "1"
+      CHROMIUM_ARGS: "--no-sandbox"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./screenshots:/app/screenshots
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
