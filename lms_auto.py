@@ -53,7 +53,7 @@ SHOTS = BASE / "screenshots"
 SHOTS.mkdir(exist_ok=True)
 
 EARLY_START_MIN = 5   # за сколько минут до начала заходить
-RETRY_SEC = 600         # как часто проверять расписание
+RETRY_SEC = 120       # как часто проверять расписание
 
 
 def local(value: str) -> dt.datetime:
@@ -369,9 +369,10 @@ def run_lesson(page, token: str, lesson: dict, stay_min: Optional[int] = None) -
 
 def scheduler(not_before: Optional[dt.time] = None) -> None:
     """Работает бесконечно: при любом падении перезапускается сам."""
-    log("Планировщик запущен (Ctrl+C — остановить).")
+  
     keep_awake()
     while True:
+        log(f"Проверяю расписание ({dt.datetime.now():%H:%M:%S})...")
         try:
             run_scheduler(not_before)
         except KeyboardInterrupt:
@@ -389,6 +390,7 @@ def run_scheduler(not_before: Optional[dt.time] = None) -> None:
         done = set()
         try:
             while True:
+                log(f"Проверяю расписание ({dt.datetime.now():%H:%M:%S})...")
                 try:
                     lessons = lessons_today(token)
                 except urllib.error.HTTPError as e:
